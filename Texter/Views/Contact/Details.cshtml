@@ -1,0 +1,35 @@
+﻿@model Texter.Models.Contact
+
+@{
+    ViewData["Title"] = "Contact - Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<hr />
+<hr />
+
+    <p>@Html.DisplayNameFor(model => model.FirstName): @Html.DisplayFor(model => model.FirstName)</p>
+
+    <p>@Html.DisplayNameFor(model => model.LastName): @Html.DisplayFor(model => model.LastName)</p>
+
+    <p>@Html.DisplayNameFor(model => model.Phone): @Html.DisplayFor(model => model.Phone)</p>
+
+    <h4>Messages:</h4>
+        @foreach(var message in @Model.Messages)
+        {
+            <p> To: @message.To </p>
+            <p> From: @message.From </p>
+            <p> Message: @message.Body </p>
+                          
+            <p> @Html.ActionLink("Delete Message", "Delete", "Message", new { id = message.MessageId })</p>
+            <hr />
+        }
+
+<body>
+    <h4 class="display-create">Add A Comment</h4>
+    <div id="result2"></div>
+</body>
+         
+<p>@Html.ActionLink("Edit Post", "Edit", new { id = Model.BlogPostId }) | 
+   @Html.ActionLink("Delete Post", "Delete", new { id = Model.BlogPostId }) | 
+   @Html.ActionLink("Add Comment", "Create", "Comment", new { id = Model.BlogPostId }) |
+   @Html.ActionLink("Back to Blog Posts", "Index")</p>

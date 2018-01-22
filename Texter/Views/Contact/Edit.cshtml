@@ -1,0 +1,38 @@
+﻿@model Texter.Models.Contact
+
+@{
+    ViewData["Title"] = "Contact - Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<hr />
+<hr />
+
+
+<html>
+  <head>
+    <title>Contact - Edit</title>
+  </head>
+  <body>
+    <h2>Edit This Contact</h2>
+    <hr />
+       <h4>First Name: @Html.DisplayFor(model => model.FirstName)</h4>
+       <h4>Last Name: @Html.DisplayFor(model => model.LastName)</h4>
+
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(model => model.FirstName)
+        @Html.EditorFor(model => model.FirstName)
+        <br>
+		@Html.LabelFor(model => model.LastName)
+        @Html.EditorFor(model => model.LastName)
+        <br>
+        @Html.LabelFor(model => model.Phone)
+        @Html.EditorFor(model => model.Phone)
+        <br>
+        <input type="submit" value="Save" class="btn btn-success"/>
+    }
+        <br>
+        <a href="@Url.Action("Index", "Contacts") "class="btn btn-info"">Back to Contacts</a> 
+
+  </body>
+</html>

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Texter.Models.Contact>
+
+@{
+    ViewData["Title"] = "Contacts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<hr />
+<hr />
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.display-create').click(function () {
+      $.ajax({
+        type: 'GET',
+        dataType: 'html',
+        url: '@Url.Action("Create")',
+        success: function (result) {
+          $('#result1').html(result);
+        }
+      });
+    });
+   });
+</script>
+
+@using System.Security.Claims
+
+<table>
+    <tr>
+        <th>
+            First Name
+        </th>
+
+		<th>
+            Last Name
+        </th>
+            
+        <th></th>
+    </tr>
+
+    @foreach (var listContact in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelContact => listContact.FirstName)
+            </td>
+
+		    <td>
+                @Html.DisplayFor(modelContact => listContact.LastName)
+            </td>
+           
+            <td>
+
+                @Html.ActionLink("Details", "Details", new { id = listContact.ContactId }) 
+              
+            </td>
+        </tr>
+    }
+</table>
+
+<body>
+    <h4 class="display-create">Create New Contact</h4>
+    <div id="result1"></div>
+</body>
+   
+<!--    @Html.ActionLink("Add New Contact", "Create")-->

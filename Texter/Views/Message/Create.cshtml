@@ -1,0 +1,21 @@
+﻿@model Texter.Models.Message
+
+@{
+    ViewData["Title"] = "Message - Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    
+    @using (Html.BeginForm("NewMessage", "Message", FormMethod.Post, new { @class = "new-message"}))
+    {
+        @Html.LabelFor(model => model.To)
+        @Html.TextBoxFor(model => model.From)
+        @Html.LabelFor(model => model.Body)
+        @Html.TextBoxFor(model => model.Body)
+        @Html.DropDownList("BlogPostId")
+        <input type="submit" value="Create" />
+    }
+
+    
+<div id="result"></div>
+
+@Html.ActionLink("Back to Blog Posts", "Index", "Blog") | @Html.ActionLink("Edit Comment", "Edit", "Comment")

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Texter.Models.Message>
+
+@{
+    ViewData["Title"] = "Message";
+
+}
+
+@using System.Security.Claims
+
+<h3>Messages</h3>
+<table>
+    <tr>      
+        <th>
+            To
+        </th>
+		<th>
+            From
+        </th>
+        <th>
+            Body
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var listMessage in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelMessage => listMessage.To)
+            </td>
+            <td>
+                @Html.DisplayFor(modelMessage => listMessage.From)
+            </td>
+            <td>
+                @Html.DisplayFor(modelMessage => listMessage.Body)
+            </td>
+		    <td>
+                @Html.DisplayFor(modelMessage => listMessage.Status)
+            </td>
+        </tr>
+    }
+    
+</table>
+<p>
+    @Html.ActionLink("Add Message", "Send Message", "Home")
+</p>

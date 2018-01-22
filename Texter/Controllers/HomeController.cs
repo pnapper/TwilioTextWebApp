@@ -28,6 +28,7 @@ namespace Texter.Controllers
         [HttpPost]
         public IActionResult SendMessage(Message newMessage)
         {
+            Console.WriteLine(newMessage);
             newMessage.Send();
             return RedirectToAction("Index");
         }
