@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Texter", "Texter\Texter.csproj", "{B79515A8-0782-4AB1-8B3E-163D0B910580}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B79515A8-0782-4AB1-8B3E-163D0B910580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B79515A8-0782-4AB1-8B3E-163D0B910580}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B79515A8-0782-4AB1-8B3E-163D0B910580}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B79515A8-0782-4AB1-8B3E-163D0B910580}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
