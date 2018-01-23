@@ -36,7 +36,9 @@ namespace Texter.Controllers
 
         public IActionResult SendMessage()
         {
-            ViewBag.To = new SelectList(_db.Contacts, "Phone", "FirstName");
+
+            ViewBag.To = new SelectList(_db.Contacts, "Phone", "FullName");
+          
             return View();
         }
 

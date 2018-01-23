@@ -15,6 +15,7 @@ namespace Texter.Models
         public string Phone { get; set; }
         public virtual ICollection<Message> Messages { get; set; }
         public virtual ApplicationUser User { get; set; }
+        public string FullName { get { return FirstName + " " + LastName; } }
 
         public override bool Equals(System.Object otherContact)
         {

@@ -21,7 +21,8 @@ namespace Texter.Models
         public string Body { get; set; }
         public string Status { get; set; }
         public int ContactId { get; set; }
-        public virtual Contact Contact { get; set; }
+        public virtual Contact Contact { get; set; } 
+
 
         public Message(string To, string From, string Body, string Status, int MessageId = 0, int ContactId = 0)
         {
@@ -38,6 +39,9 @@ namespace Texter.Models
         {
             
         }
+
+
+
 
         public static List<Message> GetMessages()
         {
