@@ -26,3 +26,7 @@ input, select, textarea {
         display: none;
     }
 }
+
+th {
+    padding-right: 100px;
+}

@@ -1,12 +1,6 @@
 ﻿<div id="display-create">
-@{
-    ViewData["Title"] = "Create";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
 
 @model Texter.Models.Contact
-    
-<h2>Create a new Contact.</h2>
 
 <hr />
 
@@ -20,7 +14,5 @@
     @Html.TextBoxFor(model => model.Phone)
     <input type="submit" value="Create" />
 }
-
-@Html.ActionLink("Back to Contacts", "Index")
 
 </div>
