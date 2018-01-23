@@ -12,7 +12,7 @@ namespace Texter.Models
         public int ContactId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int Phone { get; set; }
+        public string Phone { get; set; }
         public virtual ICollection<Message> Messages { get; set; }
         public virtual ApplicationUser User { get; set; }
 

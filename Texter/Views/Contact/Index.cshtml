@@ -33,6 +33,10 @@
 		<th>
             Last Name
         </th>
+
+		<th>
+            Phone
+        </th>
             
         <th></th>
     </tr>
@@ -47,19 +51,23 @@
 		    <td>
                 @Html.DisplayFor(modelContact => listContact.LastName)
             </td>
+
+		    <td>
+                @Html.DisplayFor(modelContact => listContact.Phone)
+            </td>
            
             <td>
 
-                @Html.ActionLink("Details", "Details", new { id = listContact.ContactId }) 
+<!--                @Html.ActionLink("Details", "Details", new { id = listContact.ContactId }) -->
               
             </td>
         </tr>
     }
 </table>
 
-<body>
+<!--<body>
     <h4 class="display-create">Create New Contact</h4>
     <div id="result1"></div>
-</body>
+</body>-->
    
-<!--    @Html.ActionLink("Add New Contact", "Create")-->
+ @Html.ActionLink("Add New Contact", "Create")
