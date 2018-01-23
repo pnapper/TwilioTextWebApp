@@ -50,6 +50,23 @@ namespace Texter.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult SendGroupMessage()
+        {
+            //Contact thisContact = _db.Contacts.FirstOrDefault(items => items.ContactId == id);
+            ViewBag.Contacts = _db.Contacts.ToList();
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SendGroupMessage(Message newMessage)
+        {
+            
+            Console.WriteLine(newMessage);
+            newMessage.Send();
+            return RedirectToAction("Index");
+        }
+
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";

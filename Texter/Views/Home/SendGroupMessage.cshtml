@@ -1,0 +1,22 @@
+﻿@model Texter.Models.Message
+
+@{
+    ViewData["Title"] = "Send Message";
+}
+
+<h2>Send a new group message</h2>
+<hr />
+@using (Html.BeginForm())
+{
+    @foreach(var contact in @ViewBag.Contacts)
+    {
+        <input type="checkbox" name="To" value="@contact.Phone"> @contact.FullName
+    }
+    <br>
+    @Html.LabelFor(model => model.Body)
+    @Html.EditorFor(model => model.Body, new { htmlAttributes = new { @class = "form-control"} })
+    <br>
+    <input type="submit" value="Send!" class="btn btn-default"/>
+}
+
+@Html.ActionLink("Back home", "Index")
