@@ -1,18 +1,19 @@
 ﻿<Properties StartupConfiguration="{B79515A8-0782-4AB1-8B3E-163D0B910580}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Texter/Views/Contact/Create.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Texter/Views/Contact/Index.cshtml">
     <Files>
-      <File FileName="Texter/Views/Contact/Index.cshtml" Line="77" Column="7" />
-      <File FileName="Texter/Models/Message.cs" Line="55" Column="55" />
-      <File FileName="Texter/Models/Contact.cs" Line="15" Column="22" />
-      <File FileName="Texter/Models/ApplicationDbContext.cs" Line="26" Column="1" />
-      <File FileName="Texter/wwwroot/css/styles.css" Line="5" Column="1" />
+      <File FileName="Texter/Models/Message.cs" Line="54" Column="40" />
+      <File FileName="Texter/Views/Home/Contact.cshtml" Line="1" Column="1" />
+      <File FileName="Texter/Views/Contact/Index.cshtml" Line="2" Column="1" />
+      <File FileName="Texter/Controllers/ContactController.cs" Line="46" Column="39" />
+      <File FileName="Texter/Views/Message/Create.cshtml" Line="8" Column="5" />
+      <File FileName="Texter/Controllers/MessageController.cs" Line="38" Column="1" />
+      <File FileName="Texter/Views/Home/SendMessage.cshtml" Line="6" Column="104" />
+      <File FileName="Texter/Views/Message/Index.cshtml" Line="1" Column="1" />
+      <File FileName="Texter/Models/Contact.cs" Line="12" Column="29" />
+      <File FileName="Texter/Controllers/HomeController.cs" Line="39" Column="74" />
       <File FileName="Texter/Views/Home/Index.cshtml" Line="11" Column="51" />
-      <File FileName="Texter/Views/_ViewStart.cshtml" Line="1" Column="1" />
-      <File FileName="Texter/Views/_ViewImports.cshtml" Line="1" Column="1" />
-      <File FileName="Texter/Views/Shared/_Layout.cshtml" Line="10" Column="56" />
-      <File FileName="Texter/wwwroot/css/site.css" Line="40" Column="1" />
-      <File FileName="Texter/wwwroot/css/site.min.css" Line="32" Column="2" />
-      <File FileName="Texter/Views/Contact/Create.cshtml" Line="6" Column="1" />
+      <File FileName="Texter/Views/Home/About.cshtml" Line="1" Column="1" />
+      <File FileName="Texter/Views/Shared/_Layout.cshtml" Line="47" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

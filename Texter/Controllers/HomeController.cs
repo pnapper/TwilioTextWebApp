@@ -3,12 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Texter.Models;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace Texter.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ApplicationDbContext _db;
+        private readonly UserManager<ApplicationUser> _userManager;
+
+        public HomeController(UserManager<ApplicationUser> userManager, ApplicationDbContext db)
+        {
+            _userManager = userManager;
+            _db = db;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -22,6 +36,7 @@ namespace Texter.Controllers
 
         public IActionResult SendMessage()
         {
+            ViewBag.To = new SelectList(_db.Contacts, "Phone", "FirstName");
             return View();
         }
 

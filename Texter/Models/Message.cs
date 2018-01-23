@@ -15,14 +15,15 @@ namespace Texter.Models
     [Table("Messages")]
     public class Message
     {
+        public int MessageId { get; set; }
         public string To { get; set; }
         public string From { get; set; }
         public string Body { get; set; }
         public string Status { get; set; }
-        public int MessageId { get; set; }
+        public int ContactId { get; set; }
         public virtual Contact Contact { get; set; }
 
-        public Message(string To, string From, string Body, string Status, int MessageId = 0)
+        public Message(string To, string From, string Body, string Status, int MessageId = 0, int ContactId = 0)
         {
 
             this.To = To;
@@ -30,6 +31,12 @@ namespace Texter.Models
             this.Body = Body;
             this.Status = Status;
             this.MessageId = MessageId;
+            this.ContactId = ContactId;
+        }
+
+        public Message()
+        {
+            
         }
 
         public static List<Message> GetMessages()

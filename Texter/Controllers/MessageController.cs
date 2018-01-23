@@ -35,14 +35,14 @@ namespace Texter.Controllers
 
         public IActionResult Create()
         {
-            ViewBag.ContactId = new SelectList(_db.Contacts, "ContactId", "FirstName", "LastName");
+
             return View();
         }
 
         [HttpPost]
-        public IActionResult Create(string To, string From, string Body, string Status)
+        public IActionResult Create(string To, string From, string Body, string Status, int ContactId)
         {
-            var newMessage = new Message(To, From, Body, Status);
+            var newMessage = new Message(To, From, Body, Status, ContactId);
 
             if (ModelState.IsValid)
             {

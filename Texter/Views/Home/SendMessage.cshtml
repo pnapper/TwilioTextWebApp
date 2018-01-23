@@ -1,16 +1,25 @@
-﻿@model Texter.Models.Message
+﻿@{
+    ViewData["Title"] = "Send Message";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@model Texter.Models.Message
+
 
 <h2>Send a new message</h2>
 <hr />
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.To)
-    @Html.TextBoxFor(model => model.To)
-<!--    @Html.LabelFor(model => model.From)
+    @Html.DropDownList("To")
+    <!--    @Html.LabelFor(model => model.From)
     @Html.TextBoxFor(model => model.From)-->
+    <br>
     @Html.LabelFor(model => model.Body)
-    @Html.TextBoxFor(model => model.Body)
-    <input type="submit" value="Send!" />
+    @Html.EditorFor(model => model.Body, new { htmlAttributes = new { @class = "form-control"} })
+    <br>
+    <input type="submit" value="Send!" class="btn btn-default"/>
 }
 
 @Html.ActionLink("Back home", "Index")

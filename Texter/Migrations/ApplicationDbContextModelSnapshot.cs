@@ -213,7 +213,7 @@ namespace Texter.Migrations
 
                     b.Property<string>("Body");
 
-                    b.Property<int?>("ContactId");
+                    b.Property<int>("ContactId");
 
                     b.Property<string>("From");
 
@@ -276,7 +276,8 @@ namespace Texter.Migrations
                 {
                     b.HasOne("Texter.Models.Contact", "Contact")
                         .WithMany("Messages")
-                        .HasForeignKey("ContactId");
+                        .HasForeignKey("ContactId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
         }
     }

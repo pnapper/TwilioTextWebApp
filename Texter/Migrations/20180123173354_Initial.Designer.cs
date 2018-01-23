@@ -8,7 +8,7 @@ using Texter.Models;
 namespace Texter.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180123000657_Initial")]
+    [Migration("20180123173354_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -214,7 +214,7 @@ namespace Texter.Migrations
 
                     b.Property<string>("Body");
 
-                    b.Property<int?>("ContactId");
+                    b.Property<int>("ContactId");
 
                     b.Property<string>("From");
 
@@ -277,7 +277,8 @@ namespace Texter.Migrations
                 {
                     b.HasOne("Texter.Models.Contact", "Contact")
                         .WithMany("Messages")
-                        .HasForeignKey("ContactId");
+                        .HasForeignKey("ContactId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
         }
     }

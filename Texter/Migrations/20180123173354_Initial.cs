@@ -178,7 +178,7 @@ namespace Texter.Migrations
                     MessageId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGeneratedOnAdd", true),
                     Body = table.Column<string>(nullable: true),
-                    ContactId = table.Column<int>(nullable: true),
+                    ContactId = table.Column<int>(nullable: false),
                     From = table.Column<string>(nullable: true),
                     Status = table.Column<string>(nullable: true),
                     To = table.Column<string>(nullable: true)
@@ -191,7 +191,7 @@ namespace Texter.Migrations
                         column: x => x.ContactId,
                         principalTable: "Contacts",
                         principalColumn: "ContactId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
