@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Texter.Models;
+using Texter.ViewModels;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -52,21 +53,26 @@ namespace Texter.Controllers
 
         public IActionResult SendGroupMessage()
         {
-            //Contact thisContact = _db.Contacts.FirstOrDefault(items => items.ContactId == id);
             ViewBag.Contacts = _db.Contacts.ToList();
 
             return View();
         }
 
         [HttpPost]
-        public IActionResult SendGroupMessage(Message newMessage)
+        public IActionResult SendGroupMessage(GroupMessageModel newMessages)
         {
-            
-            Console.WriteLine(newMessage);
-            newMessage.Send();
+            Console.WriteLine(newMessages.Message.Body);
+            if (newMessages.Contacts.Count > 0) {
+                foreach (var contact in newMessages.Contacts)
+                {
+                    newMessages.Message.To = contact;
+                    newMessages.Message.Send();
+                }
+            }
+
             return RedirectToAction("Index");
         }
-
+       
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";

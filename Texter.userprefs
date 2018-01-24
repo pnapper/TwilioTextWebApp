@@ -1,8 +1,13 @@
 ﻿<Properties StartupConfiguration="{B79515A8-0782-4AB1-8B3E-163D0B910580}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Texter/Controllers/HomeController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Texter/ViewModels/LoginViewModel.cs">
     <Files>
-      <File FileName="Texter/Views/Home/SendGroupMessage.cshtml" Line="8" Column="34" />
-      <File FileName="Texter/Controllers/HomeController.cs" Line="57" Column="13" />
+      <File FileName="Texter/Views/Home/SendGroupMessage.cshtml" Line="23" Column="65" />
+      <File FileName="Texter/Views/Home/SendMessage.cshtml" Line="1" Column="15" />
+      <File FileName="Texter/ViewModels/GroupMessageModel.cs" Line="12" Column="2" />
+      <File FileName="Texter/Models/Message.cs" Line="16" Column="25" />
+      <File FileName="Texter/ViewModels/RegisterViewModel.cs" Line="24" Column="1" />
+      <File FileName="Texter/ViewModels/LoginViewModel.cs" Line="8" Column="2" />
+      <File FileName="Texter/Controllers/HomeController.cs" Line="75" Column="8" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
